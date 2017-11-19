@@ -1,0 +1,104 @@
+/*styles entire document*/
+
+	* {
+		font-family: Helvetica, sans-serif;
+		border-color: black;
+		border-width: 2px;
+		background-color: black;
+	}
+
+		table {
+			position: fixed;
+		}
+		/*changes text field height and aligns text to right*/
+		input[type="text"] {
+			height: 80px;
+			font-size: 34px;
+			font-weight: 100;
+			text-align: right;
+			background-color: black;
+			color: white;
+		}
+
+		/*styling buttons*/
+		input[type="button"] {
+			width: 70px;
+			height: 70px;
+			border-radius: 40px;
+			font-size: 24px;
+			text-align: center;
+			background-color: rgb(56, 57, 61);
+			color: white;
+		}
+
+		/*creates hover effect for all buttons*/
+		input[type="button"]:hover {
+			border-radius: 0px;
+			transition: 1s;
+			font-weight: 100;
+		}
+
+		/*creates hover effects for number buttons - when hover, changes opacity of bg colors*/
+		input[class="numbers"]:hover {
+			background-color: rgba(200, 201, 209, .9);
+			border-color: black;
+			color: black;
+		}
+
+		/*changes font size of avg text to 20px*/
+		input[name="avg"] {
+			font-size: 20px;
+		}
+
+		/*aligns multiply sign towards center*/
+		input[name="multiply"] {
+			padding-top: 10px;
+		}
+
+		/*changes the width and text alignment of 0 button*/
+		input[name="zero"] {
+			/*width: 144px;*/
+			/*padding-right: 80px;*/
+		}
+
+		input[name="music"] {
+			font-size: 16px;
+		}
+
+		/*changes the font and background color of c, % and avg*/
+		input[class="operators1"] {
+			background-color: silver;
+			color: black;
+		}
+
+		/*changes the font and background color of /, *, -, +, =*/
+		input[class="operators2"] {
+			background-color: orange;
+			color: white;
+		}
+
+		/*when hovering, changes the background color of /, *, -, +, =*/
+		input[class="operators2"]:hover {
+			background-color: rgb(247, 134, 4);
+			color: white;
+		}
+
+		/*creates black background for calculator*/
+		table {
+			background-color: black;
+		}
+
+		/*moves the form/calculator to center of page*/
+		form {
+			/*padding-top: 150px;
+			padding-left: 550px;*/
+		}		
+
+		/*moves the homescreen to center of page*/
+		div {
+			padding-top: 150px;
+			padding-left: 550px;
+		}
+
+
+	</style>

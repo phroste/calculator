@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calculator</title>
+	<link rel="stylesheet" href="styles/style.css" type="text/css">
+
+	<style type="text/css">
+		
+	/*keyframe animation - when homescreen is clicked, the calculator fades into the next frame*/
+	@keyframes screen {
+	0% {
+		opacity: 0;
+	}
+	70% {
+		opacity: .5;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+	
+	/*z-index gives a layer effect to the fade in keyframe, opacity animation is set at full 2 seconds*/
+	#para {
+		z-index: 1;
+		animation: screen 1s ease-in 0s;
+	}
+
+	</style>
+</head>
+<body>
+
+<div id="para">
+	<form name = "Calc">
+		<table border>
+			<tr>
+				<td>
+					<input type="text" name="input" size="15">
+				</td>
+			</tr>		
+		<tr>
+			<td>	
+		
+			<!-- creates a button named "one". the value " 1 " displays 1 on the button. When the button is clicked, the "Calc" form sends/displays the value/integer '1' to the text input field-->
+				<input type="button" class ="operators1" name="allclear" value = " C " onclick="Calc.input.value = '' ">
+
+				<input type="button" class ="operators1" name="percentage" value = " % " onclick="percent()">
+
+				<input type="button" class ="operators1" name="avg" value = " AVG " onclick="average()">
+
+				<input type="button" class ="operators2" name="divide" value = " / " onclick="Calc.input.value += '/' ">
+
+			</td>
+		</tr>	
+		
+		<tr> <!-- buttons 7, 8, 9, * -->
+			<td>
+				<input type="button" class ="numbers" name="seven" value=" 7 " onclick="Calc.input.value += '7' ">
+
+				<input type="button" class ="numbers" name="eight" value=" 8 " onclick="Calc.input.value += '8' ">
+
+				<input type="button" class ="numbers" name="nine" value=" 9 " onclick="Calc.input.value += '9' ">
+
+				<input type="button" class ="operators2" name="multiply" value = " * " onclick="Calc.input.value += '*' ">
+
+		<tr> <!-- buttons 4, 5, 6, - -->
+			<td>
+				<input type="button" class ="numbers" name="four" value=" 4 " onclick="Calc.input.value += '4' ">	
+
+				<input type="button" class ="numbers" name="five" value=" 5 " onclick="Calc.input.value += '5' ">
+
+				<input type="button" class ="numbers" name="six" value=" 6 " onclick="Calc.input.value += '6' ">	
+
+				<input type="button" class ="operators2" name="minus" value = " - " onclick="Calc.input.value += '-' ">
+			</td>
+		</tr>
+
+		<tr>
+			<td> <!-- buttons 1, 2, 3, + -->
+			<input type="button" class ="numbers" name="one" value=" 1 " onclick="Calc.input.value += '1' ">
+			
+
+			<input type="button" class ="numbers" name="two" value=" 2 " onclick="Calc.input.value += '2' ">
+
+			<input type="button" class ="numbers" name="three" value=" 3 " onclick="Calc.input.value += '3' ">
+
+			<input type="button" class ="operators2" name="plus" value = " + " onclick="Calc.input.value += '+' "> 
+			</td>
+		</tr>
+
+		<tr>
+			<td> <!-- buttons 0, . , = -->
+				<input type="button" class ="numbers" name="zero" value=" 0 " onclick="Calc.input.value += '0' ">
+
+				<!-- this creates the button "PLAY". when clicked, the play function activates on line 105 -->
+				<input type="button" class ="numbers" name="music" value=" PLAY " onclick="play()">
+
+				<audio id="audio" src="audio/Mos Def - Mathematics.mp3" ></audio>
+
+				<input type="button" class ="numbers" name="decimal" value=" . " onclick="Calc.input.value += '.' ">
+
+				<!-- when you click the = button, eval converts the strings inside the text field into an integer/number 
+				and outputs the result into the text field -->
+				<input type="button" class ="operators2" name="equals" value = " = " onclick="Calc.input.value = eval(Calc.input.value)">
+			</td>
+		</tr>
+
+		</td>
+	</tr>
+</table>
+</form>
+
+</div>
+
+<script type="text/javascript">
+	
+//Calc.input.value takes the strings inside the text input field, eval converts those strings into integers,
+//then we divide that number. Calc.input.value.split("+") removes the (+) signs and counts them.
+//we divide the sum by the number of (+) signs counted (this counts how many numbers there are)
+function average() {
+	Calc.input.value = eval(Calc.input.value)/Calc.input.value.split("+").length;
+	}
+
+//Calc.input.value takes the strings inside the text input field, eval converts those strings into integers,
+//then we divide that number by 100 to get the percentage in decimal form
+function percent() {
+	Calc.input.value = eval(Calc.input.value)/100;
+}
+
+// var audioTimes = retrieve the element id audio and play the audio audio linked aboved in line 73
+
+function play() {
+	var audio = document.getElementById("audio");
+	audio.play();
+}
+
+</script>
+
+</body>
+
+</html>
